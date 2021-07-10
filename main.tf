@@ -1,8 +1,8 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "super-duper-crazy-bucket"
+  bucket = var.bucket_name
   acl    = "private"
 
   tags = {
-    Name        = "super-duper-crazy-bucket"
+    Name        = var.bucket_name
   }
 }
