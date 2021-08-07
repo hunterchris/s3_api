@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: s3-api-deployment
+  labels:
+    app: s3-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: s3-api
+  template:
+    metadata:
+      labels:
+        app: s3-api
+    spec:
+      containers:
+      - name: s3-api
+        image: hunterchris78/flask_list_bucket:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - 
+          name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: accesskey
+              key: AWS_ACCESS_KEY_ID
+        -
+          name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: secretkey
+              key: AWS_SECRET_ACCESS_KEY
+        -
+          name: BUCKET
+          value: super-duper-crazy-bucket
+        
