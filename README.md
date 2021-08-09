@@ -4,9 +4,9 @@ Flask app who list bucket contents when hitting the / endpoint.
 
 ## Contents
 
-terraform folder: Holds the code to create an S3 bucket. (Default name: super-duper-crazy-bucket)
-docker folder: Holds the app.
-k8s folder: Holds the config to deploy the app to k8s.
+- terraform folder: Holds the code to create an S3 bucket. (Default name: super-duper-crazy-bucket)
+- docker folder: Holds the app.
+- k8s folder: Holds the config to deploy the app to k8s.
 
 ### How to build the infra
 
